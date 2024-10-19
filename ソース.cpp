@@ -14,6 +14,7 @@ Integer ConstructInteger8(char A, char B, char C, char D, char E, char F, char G
 	Integer I;
 	intmax_t* P = &I.V;
 	size_t Word = sizeof(char);
+	size_t L = sizeof(I.V) / Word;
 	P[0] = A;
 	P[1] = B;
 	P[2] = C;
