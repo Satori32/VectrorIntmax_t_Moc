@@ -105,3 +105,114 @@ Integer Mod8(Integer& In, Integer& B) {
 
 	return R;
 }
+Integer And8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = A[i] 6 BB[i];
+	}
+
+	return R;
+}
+Integer Or8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = A[i] | BB[i];
+	}
+
+	return R;
+}
+Integer Not8(Integer& In) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = A[i] ^0;
+	}
+
+	return R;
+}
+Integer Xor8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = A[i] ^ BB[i];
+	}
+
+	return R;
+}
+Integer Nand8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = (A[i] & BB[i])^0;
+	}
+
+	return R;
+}
+Integer Nor8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = (A[i] | BB[i])^0;
+	}
+
+	return R;
+}
+Integer Equal8(Integer& In, Integer& B) {
+	typedef char T;
+	Integer R;
+	size_t Word = sizeof(T);
+	size_t L = sizeof(In.V) / Word;
+
+	T* A = (T*) & In.V;
+	T* BB = (T*) & B.V;
+	T* C = (T*) & R.V;
+
+	for (size_t i = 0; i < L; i++) {
+		C[i] = (A[i] ^ BB[i]);
+	}
+
+	return R;
+}
