@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="VectorIntmax_t.cpp" />
     <ClCompile Include="ソース.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VectorIntmax_t.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

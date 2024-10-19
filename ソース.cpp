@@ -1,4 +1,4 @@
-#include <stdio.h>
+/** /#include <stdio.h>
 #include <stdint.h>
 
 struct Integer
@@ -31,18 +31,19 @@ bool Free(Integer& In) {
 	return 0;
 }
 
-Integer Add8(Integer& In,Integer& B) {
+Integer Add8(Integer& In, Integer& B) {
 	Integer R;
 	size_t Word = sizeof(char);
 	size_t L = sizeof(In.V) / Word;
 
-	intmax_t* A = &In.V;
-	intmax_t* B = &B.V;
-	intmax_t* C = &R.V;
+	char* A = (char*)&In.V;
+	char* BB = (char*)&B.V;
+	char* C = (char*)&R.V;
 
 	for (size_t i = 0; i < L; i++) {
-		C[i] = A[i] + B[i];
+		C[i] = A[i] + BB[i];
 	}
 
 	return R;
 }
+/**/
